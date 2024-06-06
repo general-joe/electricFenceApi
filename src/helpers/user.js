@@ -1,59 +1,59 @@
-const prisma = require("../utils/prismaUtil")
+const prisma = require("../utils/prismaUtil");
 
- const signUp = async (data) => {
-   const client = await prisma.client.create({
-     data,
-   });
-   return client;
- };
+const signUp = async (data) => {
+  const user = await prisma.user.create({
+    data,
+  });
+  return user;
+};
 
- const getClients = async () => {
-   const clients = await prisma.client.findMany({});
-   return clients;
- };
+const getUsers = async () => {
+  const users = await prisma.user.findMany({});
+  return users;
+};
 
- const getClientById = async (id) => {
-   const client = await prisma.client.findUnique({
-     where: { id },
-   });
-   return client;
- };
+const getUserById = async (id) => {
+  const user = await prisma.user.findUnique({
+    where: { id },
+  });
+  return user;
+};
 
- const editClient = async (id, data) => {
-   const client = await prisma.client.update({
-     where: { id },
-     data,
-   });
-   return client;
- };
+const editUser = async (id, data) => {
+  const user = await prisma.user.update({
+    where: { id },
+    data,
+  });
+  return user;
+};
 
- const removeClient = async (id) => {
-   const client = await prisma.client.delete({
-     where: { id },
-   });
-   return client;
- };
+const removeUser = async (id) => {
+  const user = await prisma.user.delete({
+    where: { id },
+  });
+  return user;
+};
 
- const login = async (email) => {
-   const client = await prisma.client.findUnique({
-     where: {
-       email,
-     },
-     select: {
-       role: true,
-       id: true,
-       email: true,
-       password: true,
-     },
-   });
-   return client;
- };
+const login = async (email) => {
+  const user = await prisma.user.findUnique({
+    where: {
+      email,
+    },
+    select: {
+      role: true,
+      id: true,
+      email: true,
+      password: true,
+    },
+  });
+  return user;
+};
 
- module.exports = {
-   signUp,
-   getClients,
-   getClientById,
-   editClient,
-   removeClient,
-   login,
- };
+module.exports = {
+  signUp,
+  getUsers,
+  getUserById,
+  editUser,
+  removeUser,
+  login,
+};
