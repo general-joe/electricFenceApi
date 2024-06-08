@@ -9,7 +9,7 @@ const {
   login,
 } = require("../helpers/user");
 
-exports.createUser = async (req, res, next) => {
+exports.addUser = async (req, res, next) => {
   try {
     const data = req.body;
     data.password = bcrypt.hash(data.password);
@@ -22,5 +22,5 @@ exports.createUser = async (req, res, next) => {
 };
 
 module.exports = {
-  createUser,
+  addUser,
 };
