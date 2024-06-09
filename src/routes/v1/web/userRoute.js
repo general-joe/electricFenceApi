@@ -11,10 +11,11 @@
  const availability = require("../../../middlewares/userCheck");
 
  router.post("/signUp", isValid, availability.user, user.addUser);
-//  router.post("/login", client.login);
-//  router.get("/list", client.getClients);
-//  router.get("/:id", client.getClientById);
-//  router.patch("/:id", client.editClient);
-//  router.delete("/:id", client.removeClient);
+ router.post('login', user.signIn)
+ router.get('list', user.listUsers)
+ router.get('/:id',user.findUserbyId)
+ router.patch('update', user.updateUser)
+ router.delete('delete', user.deleteUser)
+
 
  module.exports = router;

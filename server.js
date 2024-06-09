@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
-
-const PORT = process.env.PORT || 2020;
+const dotenv = require("dotenv")
+dotenv.config()
+const port = process.env.PORT || 2020;
 
 const cors = require("cors");
 
@@ -15,9 +16,6 @@ const morgan = require("morgan");
 
 // const compression = require("compression");
 
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 app.use(express.json({}));
 
@@ -64,4 +62,6 @@ const indexRoute = require("./src/routes/index");
 
 app.use("/api", indexRoute);
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+app.listen(port, () =>{
+  console.log('Server is running on port',`${port}`)
+});
