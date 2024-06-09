@@ -21,6 +21,14 @@ exports.addUser = async (req, res, next) => {
   }
 };
 
+exports.Users = async(req,res,next)=>{
+  try{
+
+  }catch(error){
+    console.log(error);
+  }
+}
+
 // module.exports = {
 //   addUser,
 // };
