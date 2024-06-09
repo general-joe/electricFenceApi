@@ -10,11 +10,11 @@ exports.checkUserAvailability = async (req, res, next) => {
       },
     });
     if (!email) {
+      next()
+    } else {
       res
         .status(httpstatus.BADREQUEST)
         .json({ message: "User has already registered" });
-    } else {
-      next();
     }
   } catch (error) {
     console.log(error);
