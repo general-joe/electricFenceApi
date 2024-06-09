@@ -1,5 +1,5 @@
 const prisma = require("../utils/prismaUtil");
-const bcrypt = require("bcrypt");
+const bcrypt = require("../utils/bcrypt");
 const {
   signUp,
   getUsers,
@@ -21,6 +21,6 @@ exports.addUser = async (req, res, next) => {
   }
 };
 
-module.exports = {
-  addUser,
-};
+// module.exports = {
+//   addUser,
+// };

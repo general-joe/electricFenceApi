@@ -1,7 +1,7 @@
 const { Router } = require("express");
+const indexRoute = require("../routes/v1/index");
 
 const rootRouter = Router();
-const indexRoute = require("../routes/v1/index");
 
 rootRouter.use("/v1", indexRoute);
 

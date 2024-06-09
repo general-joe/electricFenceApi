@@ -1,4 +1,4 @@
-const prisma = require("@prisma/client");
+const prisma = require("../utils/prismaUtil");
 const httpstatus = require("../utils/httpStatusCode");
 
 exports.user = async (req, res, next) => {

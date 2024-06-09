@@ -3,8 +3,6 @@ const app = express();
 
 const PORT = process.env.PORT || 2020;
 
-
-
 const cors = require("cors");
 
 const helmet = require("helmet");
@@ -20,8 +18,6 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 
 dotenv.config();
-
-const PORT = process.env.PORT || 3000;
 
 app.use(express.json({}));
 
@@ -64,12 +60,8 @@ app.use((err, req, res, next) => {
     error: err.message,
   });
 });
-const indexRoute = require("./routes/index");
+const indexRoute = require("./src/routes/index");
 
 app.use("/api", indexRoute);
-
-
-
-
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
