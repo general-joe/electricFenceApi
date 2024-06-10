@@ -1,6 +1,7 @@
 const bcrypt = require("../utils/bcrypt");
 const httpstatus = require("../utils/httpStatusCode");
 const { signToken } = require("../utils/tokenUtil");
+const CustomError = require("../utils/customErrorClass");
 
 const {
   signUp,
