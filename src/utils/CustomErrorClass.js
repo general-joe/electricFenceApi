@@ -6,4 +6,5 @@ class CustomError extends Error {
     Error.captureStackTrace(this, this.constructor); // Capture the stack trace
   }
 }
+
 module.exports = CustomError;
