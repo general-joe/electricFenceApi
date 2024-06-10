@@ -1,7 +1,7 @@
 const prisma = require("../utils/prismaUtil");
 const httpstatus = require("../utils/httpStatusCode");
 
-exports.user = async (req, res, next) => {
+exports.checkUserAvailability = async (req, res, next) => {
   try {
     const { email } = req.body;
     const checkUser = await prisma.user.findUnique({
@@ -9,12 +9,12 @@ exports.user = async (req, res, next) => {
         email: email,
       },
     });
-    if (checkUser) {
+    if (!email) {
+      next()
+    } else {
       res
         .status(httpstatus.BADREQUEST)
         .json({ message: "User has already registered" });
-    } else {
-      next();
     }
   } catch (error) {
     console.log(error);
