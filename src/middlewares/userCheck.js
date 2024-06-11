@@ -4,7 +4,7 @@ const httpstatus = require("../utils/httpStatusCode");
 exports.checkUserAvailability = async (req, res, next) => {
   try {
     const {email} = req.body
-    const user = await prisma.findUnique({
+    const user = await prisma.user.findUnique({
       where:{
         email
       }
