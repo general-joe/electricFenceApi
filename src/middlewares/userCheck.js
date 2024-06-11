@@ -5,17 +5,18 @@ const CustomeError = require("../utils/errorClass");
 exports.checkUserAvailability = async (req, res, next) => {
   try {
     const { email } = req.body;
-    const checkUser = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
       where: {
-        email: email,
+        email
       },
     });
-    if (checkUser) {
+    if (user) {
       res
-        .status(httpstatus.BADREQUEST)
-        .json({ message: "User has already registered" });
+      .status(httpstatus.BADREQUEST)
+      .json({ message: "User has already registered" });
     } else {
-      next();
+      next()
+     
     }
   } catch (error) {
     console.log(error);
