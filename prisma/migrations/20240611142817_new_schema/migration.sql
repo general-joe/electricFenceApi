@@ -8,7 +8,7 @@ CREATE TABLE "user" (
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "role" "roleName" NOT NULL,
-    "creadeAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "user_pkey" PRIMARY KEY ("id")
@@ -22,7 +22,7 @@ CREATE TABLE "admin" (
     "password" TEXT NOT NULL,
     "phone" TEXT NOT NULL,
     "role" "roleName" NOT NULL,
-    "creadeAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "admin_pkey" PRIMARY KEY ("id")
@@ -35,7 +35,7 @@ CREATE TABLE "work" (
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "url" TEXT NOT NULL,
-    "creadeAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "work_pkey" PRIMARY KEY ("id")
