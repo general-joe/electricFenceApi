@@ -18,9 +18,7 @@ exports.addUser = async (req, res, next) => {
     data.password = bcrypt.hash(data.password);
     const user = await signUp(data);
     delete user.password;
-    res
-      .status(httpstatus.CREATED)
-      .json({ message: "user created successfully" });
+    res.status(httpstatus.CREATED).json({ message: "user created successfully" });
   } catch (error) {
     console.log(error);
     next(new CustomError(500, error));

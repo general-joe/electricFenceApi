@@ -24,7 +24,7 @@ model user {
   email     String   @unique
   password  String
   role      roleName
-  creadeAt  DateTime @default(now())
+  createdAt  DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
@@ -35,7 +35,7 @@ model admin {
   password  String
   phone     String
   role      roleName
-  creadeAt  DateTime @default(now())
+  createdAt  DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
@@ -45,6 +45,6 @@ model work {
   name        String
   description String
   url         String
-  creadeAt    DateTime @default(now())
+  createdAt    DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }

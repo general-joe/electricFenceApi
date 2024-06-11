@@ -1,3 +1,4 @@
 ::1 - - [08/Jun/2024:19:51:41 +0000] "POST /api/web/v1/signUp HTTP/1.1" 404 157 "-" "PostmanRuntime/7.39.0"
 ::1 - - [08/Jun/2024:19:55:08 +0000] "POST /api/v1/signUp HTTP/1.1" 404 153 "-" "PostmanRuntime/7.39.0"
 ::1 - - [08/Jun/2024:19:56:12 +0000] "POST /v1/web/api/signUp HTTP/1.1" 404 157 "-" "PostmanRuntime/7.39.0"
+::ffff:127.0.0.1 - - [11/Jun/2024:14:07:57 +0000] "GET /api/v1/web/list HTTP/1.1" 200 13 "-" "insomnia/9.2.0"
