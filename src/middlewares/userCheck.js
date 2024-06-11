@@ -6,8 +6,9 @@ exports.checkUserAvailability = async (req, res, next) => {
     const { email } = req.body;
     const user = await prisma.user.findUnique({
       where: {
-        email
+        email,
       },
+      
     });
     if (user) {
       res
