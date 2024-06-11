@@ -1,5 +1,6 @@
 const prisma = require("../utils/prismaUtil");
 const httpstatus = require("../utils/httpStatusCode");
+const CustomeError = require("../utils/errorClass");
 
 exports.checkUserAvailability = async (req, res, next) => {
   try {
@@ -9,12 +10,12 @@ exports.checkUserAvailability = async (req, res, next) => {
         email: email,
       },
     });
-    if (!email) {
-      next()
-    } else {
+    if (checkUser) {
       res
         .status(httpstatus.BADREQUEST)
         .json({ message: "User has already registered" });
+    } else {
+      next();
     }
   } catch (error) {
     console.log(error);
